@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Shit Zone - Tienda Oficial</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        section {
+            padding: 120px 20px 60px;
+            text-align: center;
+        }
+
+        .grid-camisas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .card-camisa {
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            width: 280px;
+            transition: 0.3s;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-camisa:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-camisa img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .precio {
+            color: #27ae60;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Música de fondo (Asegúrate de tener musica.mp3) -->
+    <audio id="musicaTienda" autoplay loop>
+        <source src="musicaropa.mp3" type="audio/mpeg">
+    </audio>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h1>👕 Shit Zone</h1>
+        <p>Las mejores camisas con los mejores diseños</p>
+
+        <div class="grid-camisas">
+            <!-- Camisa 1 -->
+            <a href="detalles.html" class="card-camisa">
+                <img src="camisa1.jpg" alt="Camisa Alternativa Gris">
+                <h3>Camisa Negra Premium</h3>
+                <p class="precio">$249.99</p>
+                <p>Ver detalles y tallas</p>
+            </a>
+
+            <!-- Camisa 2 -->
+            <a href="detalles2.html" class="card-camisa">
+                <img src="camisa2.jpg" alt="Camisa Negra Alternativa">
+                <h3>Estilo Urbano</h3>
+                <p class="precio">$229.99</p>
+                <p>Ver detalles y tallas</p>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('click', () => {
+            document.getElementById('musicaTienda').play();
+        }, { once: true });
+    </script>
+</body>
+</html>

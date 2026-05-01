@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Producto - Shirt Zone</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contenedor-producto {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Imagen Principal */
+        .foto-principal img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid #eee;
+        }
+
+        /* Fila de Miniaturas */
+        .miniaturas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .miniaturas img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .miniaturas img:hover {
+            transform: scale(1.1);
+            border-color: #1a1a1a;
+        }
+
+        .info-texto {
+            margin-top: 30px;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: white;
+            background-color: #1a1a1a;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-producto">
+        <h1>Camisa Alternativa Gris</h1>
+
+        <div class="foto-principal">
+            <!-- Esta es la imagen que se ve en grande -->
+            <img src="camisa1.jpg" id="pantallaGrande" alt="Vista Principal">
+        </div>
+
+        <div class="miniaturas">
+            <!-- Al hacer clic, cambian la imagen principal -->
+            <img src="camisa1.jpg" onclick="cambiarImagen('camisa1.jpg')">
+            <img src="camisa1_atras.jpg" onclick="cambiarImagen('camisa1_atras.jpg')" onerror="this.style.display='none'">
+            <img src="camisa1_detalle.jpg" onclick="cambiarImagen('camisa1_detalle.jpg')" onerror="this.style.display='none'">
+        </div>
+
+        <div class="info-texto">
+            <p><strong>Precio:</strong> $249.99</p>
+            <p><strong>Material:</strong> 100% Algodón Peinado</p>
+            <p><strong>Descripción:</strong> Corte moderno con acabados reforzados. Ideal para un look casual o de oficina.</p>
+        </div>
+
+        <a href="paginacamisas.html" class="volver">⬅ Volver al Catálogo</a>
+    </div>
+
+    <script>
+        // Función para que las miniaturas funcionen
+        function cambiarImagen(ruta) {
+            document.getElementById('pantallaGrande').src = ruta;
+        }
+    </script>
+
+</body>
+</html>
